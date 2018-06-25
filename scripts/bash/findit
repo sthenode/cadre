@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+find $3 -name "$1" -exec $2 {} \;
+else
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+find $2 -name "$1" -exec echo {} \;
+else
+if [ "$1" != "" ]; then
+find $1 -name "._*" -exec echo {} \;
+else
+echo usage `basename $0` [pattern] [command] path
+echo find path -name '"pattern[._*]"' -exec command[echo] '{} \;'
+fi
+fi
+fi
+

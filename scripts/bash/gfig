@@ -1,0 +1,22 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+pushd $3
+git config user.name $1
+git config user.email $2
+popd
+else
+if [ "$1" != "" ]; then
+pushd $1
+git config user.name
+git config user.email
+popd
+else
+echo usage `basename $0` user email directory
+echo pushd directory
+echo git config user.name user
+echo git config user.email email
+echo popd
+git config user.name
+git config user.email
+fi
+fi

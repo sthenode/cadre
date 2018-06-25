@@ -1,0 +1,21 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+echo '#!/bin/bash' > tarme.sh
+for d in $( ls $3 ); do
+echo tarit $1 $2 $d $4 >> tarme.sh
+done
+else
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+tarme ../tar $1 $2 $3
+else
+if [ "$1" != "" ]; then
+tarme ../tar $1 . $3
+else
+echo usage `basename $0` [tardir] hostname [directory] [prefix]
+echo echo '#!/bin/bash' '>' tarme.sh
+echo for d in '$( ls directory );' do
+echo echo tarit tardir[../tar] hostname directory[.] [prefix] '>>' tarme.sh
+echo done
+fi
+fi
+fi

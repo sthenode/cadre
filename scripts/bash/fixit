@@ -1,0 +1,30 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+if [ `uname` != "Darwin" ]; then
+findit "._*" $1 $2
+findit ".DS_*" $1 $2
+fi
+findit "*.sdf" $1 $2
+findit "*.suo" $1 $2
+findit "*.ncb" $1 $2
+else
+if [ "$1" != "" ]; then
+if [ `uname` != "Darwin" ]; then
+findit "._*" rm $1
+findit ".DS_*" rm $1
+fi
+findit "*.sdf" rm $1
+findit "*.suo" rm $1
+findit "*.ncb" rm $1
+else
+echo usage `basename $0` [command] directory
+if [ `uname` != "Darwin" ]; then
+echo findit '"._*"' command[rm] directory
+echo findit '".DS_*"' command[rm] directory
+fi
+echo findit '"*.sdf"' command[rm] directory
+echo findit '"*.suo"' command[rm] directory
+echo findit '"*.ncb"' command[rm] directory
+fi
+fi
+

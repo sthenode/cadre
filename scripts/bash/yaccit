@@ -1,0 +1,16 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+echo tyacc -+ld -D $3.hxx -o $2.cxx $1.y
+else
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+tflex -+vLI -o$2.cxx $1.l
+echo tyacc -+ld -D $2.hxx -o $2.cxx $1.y
+else
+if [ "$1" != "" ]; then
+echo tyacc -+ld -D $1.hxx -o $1.cxx $1.y
+else
+echo usage `basename $0` source [output] [header] 
+echo tyacc -+ld -D header[source.hxx] -o output[source.cxx] source.y
+fi
+fi
+fi

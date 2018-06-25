@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+evpatch -p -m"*.orig;*.sh;*.h;*.c;*.m;*.hh;*.cc;*.mm;*.hxx;*.cxx;*.hpp;*.cpp;*.txt;*.t;*.xml;*.xsl;*.xslt;*.html;*.js;*.css;*.jpg;*.png;*.gif;*.bmp;*.ico;*.pro;*.pri;Doxyfile;Makefile.*;Makedefines.*;Makerules.*;Makedirs.*;Makefile;Makedefines;Makerules;Makedirs;*.sln;*.vcproj;*.vsprops;*.vcxproj;*.props;*.filters" -k"*.DS_Store;*.o;*.a;*.so;*.dylib;*.ncb;*.suo;*.user" $1 $2 $3 $4 $5 $6 $7 $8 $9
+else
+echo usage `basename $0` sourcedir targetdir
+echo evpatch -p -m'"'match'"' -k'"'skip'"' '$1' '$2' '$3' '$4' '$5' '$6' '$7' '$8' '$9'
+fi

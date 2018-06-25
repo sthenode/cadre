@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ "$1" != "" ]; then
+echo mkdir -p $1 ...
+mkdir -p $1
+echo pushd $1 ...
+pushd $1
+else
+echo usage $0 directory
+fi

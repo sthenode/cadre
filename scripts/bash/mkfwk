@@ -1,0 +1,54 @@
+#!/bin/bash
+#
+# Copyright (c) 1988-2018 $organization$
+#
+# This software is provided by the author and contributors ``as is''
+# and any express or implied warranties, including, but not limited to,
+# the implied warranties of merchantability and fitness for a particular
+# purpose are disclaimed. In no event shall the author or contributors
+# be liable for any direct, indirect, incidental, special, exemplary,
+# or consequential damages (including, but not limited to, procurement
+# of substitute goods or services; loss of use, data, or profits; or
+# business interruption) however caused and on any theory of liability,
+# whether in contract, strict liability, or tort (including negligence
+# or otherwise) arising in any way out of the use of this software,
+# even if advised of the possibility of such damage.
+#
+#   File: mkfwk
+#
+# Author: $author$
+#   Date: 3/23/2018
+#
+if [ "$1" != "" ]; then
+if [ "$2" != "" ]; then
+framework=$2
+else
+framework=$1
+fi
+mkdir -p $1/build/QtCreator
+mkdir -p $1/projects/QtCreator/lib/lib$framework
+mkdir -p $1/projects/QtCreator/app/$framework
+mkdir -p $1/projects/os/QtCreator/lib/lib$framework
+mkdir -p $1/projects/os/QtCreator/app/$framework
+mkdir -p $1/build/Makefile/Gcc
+mkdir -p $1/projects/Makefile/Gcc/lib/lib$framework
+mkdir -p $1/projects/Makefile/Gcc/app/$framework
+mkdir -p $1/projects/os/Makefile/Gcc/lib/lib$framework
+mkdir -p $1/projects/os/Makefile/Gcc/app/$framework
+mkdir -p $1/src/xos/lib/$framework
+mkdir -p $1/src/xos/app/console/$framework
+else
+echo usage `basename $0` directory [framework]
+echo mkdir -p '$1'/build/QtCreator
+echo mkdir -p '$1'/projects/QtCreator/lib/lib'$framework'['$1']
+echo mkdir -p '$1'/projects/QtCreator/app/'$framework'['$1']
+echo mkdir -p '$1'/projects/os/QtCreator/lib/lib'$framework'['$1']
+echo mkdir -p '$1'/projects/os/QtCreator/app/'$framework'['$1']
+echo mkdir -p '$1'/build/Makefile/Gcc
+echo mkdir -p '$1'/projects/Makefile/Gcc/lib/lib'$framework'['$1']
+echo mkdir -p '$1'/projects/Makefile/Gcc/app/'$framework'['$1']
+echo mkdir -p '$1'/projects/os/Makefile/Gcc/lib/lib'$framework'['$1']
+echo mkdir -p '$1'/projects/os/Makefile/Gcc/app/'$framework'['$1']
+echo mkdir -p '$1'/src/xos/lib/'$framework'['$1']
+echo mkdir -p '$1'/src/xos/app/console/'$framework'['$1']
+fi

@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+tflex -+vLI -S$3.skl -o$2.cxx $1.l
+else
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+tflex -+vLI -o$2.cxx $1.l
+else
+if [ "$1" != "" ]; then
+echo tflex -+vLI -o$1.cxx $1.l
+else
+echo usage `basename $0` source [output] [skeleton] 
+echo tflex -+vLI -Sskeleton.skl -ooutput[source.cxx] source.l 
+fi
+fi
+fi

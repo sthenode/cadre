@@ -1,0 +1,20 @@
+#!/bin/sh
+if [ "$1" != "" ]; then
+echo stopping HTTPD ...
+pushd $1/build/httpd/bin
+./httpd -k stop
+popd
+else
+if [ "$HTTPD_USER_HOME" != "" ]; then
+echo stoping HTTPD ...
+pushd $HTTPD_USER_HOME/build/httpd/bin
+./httpd -k stop
+popd
+else
+echo 'HTTPD_USER_HOME' undefined
+echo usage `basename $0` [homedir]
+echo pushd homedir['$HTTPD_USER_HOME']/build/httpd/bin
+echo ./httpd -k stop
+echo popd
+fi
+fi

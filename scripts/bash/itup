@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+evup -u $4 $5 $6 $3 $1/$2/$3 > update.sh
+else
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+evup -u $2 ../tar/$1/$2 > update.sh
+else
+echo usage `basename $0` [tardir] host directory
+echo evup -u directory tardir[../tar]/host/directory '>' update.sh
+fi
+fi

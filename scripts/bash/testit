@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+tar tvf $1/$4$3-$2.tar.bz2
+else
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+tar tvf ../tar/$2-$1.tar.bz2
+else
+echo usage `basename $0` [tardir] hostname [prefix]
+echo tar tvf tardir[../tar]/[prefix]directory-hostname.tar.bz2
+fi
+fi

@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+pushd $2/$1
+echo removing ./html ...
+rm -r ./html
+popd
+else
+if [ "$1" != "" ]; then
+pushd $1/doc/doxygen
+echo removing ./html ...
+rm -r ./html
+popd
+else
+echo usage `basename $0` [doxdir] directory
+echo '$' pushd directory/doxdir[doc/doxygen]
+echo '$' rm -r ./html
+echo '$' popd
+fi
+fi

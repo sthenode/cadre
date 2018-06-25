@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+tar -cvzf $1/$4$3-$2.tar.gz $3
+else
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+tar -cvzf ../tar/$2-$1.tar.gz $2
+else
+echo usage `basename $0` [path] hostname directory [prefix]
+echo tar -cvzf tardir[../tar]/[prefix]directory-hostname.tar.gz directory
+fi
+fi

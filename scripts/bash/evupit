@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+evup $3 $4 $5 $6 $7 $8 $9 $1 $2 > update.sh
+else
+echo usage `basename $0` source target
+echo evup '$3' '$4' '$5' '$6' '$7' '$8' '$9' source target '>' update.sh
+fi

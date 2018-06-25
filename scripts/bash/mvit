@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+mv $2 $1
+else
+echo usage `basename $0` path directory
+echo mv directory path
+fi

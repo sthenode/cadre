@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+tar xvf $1/$4$3-$2.tar.gz
+fixit $3
+else
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+tar xvf ../tar/$2-$1.tar.gz
+fixit $2
+else
+echo usage `basename $0` [tardir] hostname directory [prefix]
+echo tar xvf tardir[../tar]/[prefix]directory-hostname.tar.gz
+echo fixit directory
+fi
+fi

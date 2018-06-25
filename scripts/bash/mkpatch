@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]; then
+diff $4 $5 $6 $7 $8 $9 $1 $2 > $3/$2.patch
+else
+echo usage `basename $0` old new directory
+fi

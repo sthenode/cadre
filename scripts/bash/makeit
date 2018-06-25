@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+{ pushd $2/projects/$1/Makefile/Gcc; } && { make $3 $4 $5 $6; } && { popd; }
+else
+echo usage $0 platform directory [arg] [arg] [arg] [arg]
+fi

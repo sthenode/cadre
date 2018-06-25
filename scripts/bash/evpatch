@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+evls -d1 -r -f -b"mkpatch \"" -w"\" \"" -a"\" \$1" $1 $2 $3 $4 $5 $6 $7 $8 $9
+else
+echo usage `basename $0` sourcedir [targetdir]
+echo evls -d1 -r -f -b'"'mkpatch '\''"''"' -w'"''\''"' '\''"''"' -a'"''\''"''"' '$1' '$2' '$3' '$4' '$5' '$6' '$7' '$8' '$9'
+fi

@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$1" != "" ] && [ "$2" != "" ]; then
+evup $3 $4 $5 $6 $7 $8 $9 $2 $1/$2 > update.sh
+else
+if [ "$1" != "" ]; then
+evup $1 ../git/$1 > update.sh
+else
+echo usage `basename $0` [gitdir] directory
+echo evup directory gitdit[../git]/directory '>' update.sh
+fi
+fi
